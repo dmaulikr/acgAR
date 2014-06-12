@@ -13,6 +13,7 @@
 		76A55F191948FCCA00179AE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A55F171948FCCA00179AE3 /* Main.storyboard */; };
 		76A55F1B1948FCCA00179AE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A55F1A1948FCCA00179AE3 /* Images.xcassets */; };
 		76A55F271948FCCA00179AE3 /* acgARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A55F261948FCCA00179AE3 /* acgARTests.swift */; };
+		9A2799ECAB874D808E5B66F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3BC8CAA1742EB80143BCF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72A3BC8CAA1742EB80143BCF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A55F0C1948FCCA00179AE3 /* acgAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = acgAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A55F101948FCCA00179AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76A55F111948FCCA00179AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +38,7 @@
 		76A55F201948FCCA00179AE3 /* acgARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = acgARTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A55F251948FCCA00179AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76A55F261948FCCA00179AE3 /* acgARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acgARTests.swift; sourceTree = "<group>"; };
+		ED9C2A1C49954513903AB9CC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2799ECAB874D808E5B66F8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +66,8 @@
 				76A55F0E1948FCCA00179AE3 /* acgAR */,
 				76A55F231948FCCA00179AE3 /* acgARTests */,
 				76A55F0D1948FCCA00179AE3 /* Products */,
+				ED9C2A1C49954513903AB9CC /* Pods.xcconfig */,
+				B7B45C8D242843CDA54CEC9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +118,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B7B45C8D242843CDA54CEC9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72A3BC8CAA1742EB80143BCF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76A55F2A1948FCCA00179AE3 /* Build configuration list for PBXNativeTarget "acgAR" */;
 			buildPhases = (
+				0C00B3BA16C2457F81AE6AD1 /* Check Pods Manifest.lock */,
 				76A55F081948FCCA00179AE3 /* Sources */,
 				76A55F091948FCCA00179AE3 /* Frameworks */,
 				76A55F0A1948FCCA00179AE3 /* Resources */,
+				3E071B177E4D4C3DB5E0CEB6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +177,7 @@
 				TargetAttributes = {
 					76A55F0B1948FCCA00179AE3 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = XZUC27U986;
 					};
 					76A55F1F1948FCCA00179AE3 = {
 						CreatedOnToolsVersion = 6.0;
@@ -205,6 +222,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C00B3BA16C2457F81AE6AD1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3E071B177E4D4C3DB5E0CEB6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76A55F081948FCCA00179AE3 /* Sources */ = {
@@ -328,9 +378,11 @@
 		};
 		76A55F2B1948FCCA00179AE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED9C2A1C49954513903AB9CC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = acgAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -339,9 +391,11 @@
 		};
 		76A55F2C1948FCCA00179AE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED9C2A1C49954513903AB9CC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = acgAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,6 +457,7 @@
 				76A55F2C1948FCCA00179AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76A55F2D1948FCCA00179AE3 /* Build configuration list for PBXNativeTarget "acgARTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +466,7 @@
 				76A55F2F1948FCCA00179AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
